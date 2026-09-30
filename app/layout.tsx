@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Ayushi Choudhary" }],
   creator: "Ayushi Choudhary",
-  metadataBase: new URL("https://ayushichoudhary.dev"),
+  metadataBase: new URL("https://ayushi-portfolio-rouge.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ayushichoudhary.dev",
+    url: "https://ayushi-portfolio-rouge.vercel.app",
     title: "Ayushi Choudhary | Full-Stack Developer",
     description:
       "A personal portfolio showcasing Ayushi Choudhary's full-stack web development projects, problem-solving work, hackathon experience, and technical skills.",
