@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FAF9F6;
+    --bg-card: #FFFFFF;
+    --bg-elevated: #F5F3EE;
+    --text-primary: #18181B;
+    --text-secondary: #52525B;
+    --text-muted: #71717A;
+    --accent: #8E1E46;
+    --accent-hover: #731737;
+    --accent-subtle: rgba(142, 30, 70, 0.08);
+    --accent-border: rgba(142, 30, 70, 0.18);
+    --border-subtle: #EBE7DF;
+    --border-card: #E4DFD5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F3EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B6AEA0;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle Hero Glow */
+.hero-glow-center {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.6) 45%, transparent 75%);
+}
+
+.hero-vignette-edges {
+  background: 
+    radial-gradient(ellipse 45% 45% at 0% 0%, rgba(168, 64, 98, 0.045) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 45% at 100% 0%, rgba(168, 64, 98, 0.045) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 55% at 50% 100%, rgba(168, 64, 98, 0.035) 0%, transparent 70%);
+}
+
+/* Clean Card Subtle Hover */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+/* Speech Bubble Tail */
+.bubble-tail-left::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border-right: 1px solid #E4DFD5;
+  border-top: 1px solid #E4DFD5;
+}
+
+.bubble-tail-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%) rotate(-45deg);
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border-left: 1px solid #E4DFD5;
+  border-top: 1px solid #E4DFD5;
+}
